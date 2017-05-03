@@ -1,0 +1,29 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><%= link_to 'WaPo Headline Scraper', controller: 'headlines' %></li>
+  <li><%= link_to 'CRUD demo', controller: 'articles' %></li>
+</ul>
+
+<div id="main-container" class="container-fluid">
+  <div class="row">
+    <div id="main-content" class="col-xs-12">
+
+      <h1>Recent Washington Post Headlines</h1>
+      <h5>(leading story on washingtonpost.com)</h5>
+
+      <table class="table">
+        <tr>
+          <th>Timestamp</th>
+          <th>Title</th>
+        </tr>
+       
+        <% @headlines.each do |headline| %>
+          <tr>
+            <td><%= headline.created_at %></td>
+            <td><%= headline.title %></td>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>
