@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'scrape_now' => 'headlines#scrape'
 
   resources :notes
   resources :headlines
